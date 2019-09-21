@@ -24,7 +24,7 @@ public class Abogado implements Serializable{
 	private int idAbogado;
 	@ManyToOne
 	@JoinColumn(name = "idEspecialidad",nullable = false)
-	private int idEspecialidad;
+	private Especialidad especialidad;
 		
 	@Column(name = "NombreAbogado",nullable = false,length = 50)
 	private String NombreAbogado;
@@ -42,13 +42,7 @@ public class Abogado implements Serializable{
 		this.idAbogado = idAbogado;
 	}
 
-	public int getIdEspecialidad() {
-		return idEspecialidad;
-	}
-
-	public void setIdEspecialidad(int idEspecialidad) {
-		this.idEspecialidad = idEspecialidad;
-	}
+	
 
 	public String getNombreAbogado() {
 		return NombreAbogado;
@@ -79,14 +73,46 @@ public class Abogado implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Abogado(int idAbogado, int idEspecialidad, String nombreAbogado, double precio, Date fechaEstimada) {
+	public Especialidad getEspecialidad() {
+		return especialidad;
+	}
+
+	public void setEspecialidad(Especialidad especialidad) {
+		this.especialidad = especialidad;
+	}
+
+	public Abogado(int idAbogado, Especialidad especialidad, String nombreAbogado, double precio, Date fechaEstimada) {
 		super();
 		this.idAbogado = idAbogado;
-		this.idEspecialidad = idEspecialidad;
+		this.especialidad = especialidad;
 		NombreAbogado = nombreAbogado;
 		Precio = precio;
 		FechaEstimada = fechaEstimada;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + idAbogado;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Abogado other = (Abogado) obj;
+		if (idAbogado != other.idAbogado)
+			return false;
+		return true;
+	}
+
+
 	
 	
 	

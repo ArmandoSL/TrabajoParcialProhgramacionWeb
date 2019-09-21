@@ -11,9 +11,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 @Entity
-@Table(name = "Declaracion_aduanera")
-public class Declaracion_aduanera implements Serializable{
+@Table(name = "DeclaracionAduanera")
+public class Declaracion_aduanera implements Serializable {
 	/**
 	 * 
 	 */
@@ -22,17 +23,21 @@ public class Declaracion_aduanera implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idDeclaracion;
+
 	@OneToOne
-	@JoinColumn(name = "idFlete",nullable = false)
-	private int idFlete;
+	@JoinColumn(name = "idFlete", nullable = false)
+	private Flete flete;
+
 	@ManyToOne
-	@JoinColumn(name = "idRequisito",nullable = false)
-	private int idRequisito;
+	@JoinColumn(name = "idRequisito", nullable = false)
+	private Requisito_legal requisito_legal;
+
 	@ManyToOne
-	@JoinColumn(name = "idAbogado",nullable = false)
-	private int idAbogado;
-	////7
-	@Column(name = "Descripcion",nullable = false,length = 50)
+	@JoinColumn(name = "idAbogado", nullable = false)
+	private Abogado abogado;
+
+	//// 7
+	@Column(name = "Descripcion", nullable = false, length = 50)
 	private String Descripcion;
 
 	public int getIdDeclaracion() {
@@ -43,28 +48,35 @@ public class Declaracion_aduanera implements Serializable{
 		this.idDeclaracion = idDeclaracion;
 	}
 
-	public int getIdFlete() {
-		return idFlete;
+	
+
+	public Declaracion_aduanera() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	public void setIdFlete(int idFlete) {
-		this.idFlete = idFlete;
+	public Flete getFlete() {
+		return flete;
 	}
 
-	public int getIdRequisito() {
-		return idRequisito;
+	public void setFlete(Flete flete) {
+		this.flete = flete;
 	}
 
-	public void setIdRequisito(int idRequisito) {
-		this.idRequisito = idRequisito;
+	public Requisito_legal getRequisito_legal() {
+		return requisito_legal;
 	}
 
-	public int getIdAbogado() {
-		return idAbogado;
+	public void setRequisito_legal(Requisito_legal requisito_legal) {
+		this.requisito_legal = requisito_legal;
 	}
 
-	public void setIdAbogado(int idAbogado) {
-		this.idAbogado = idAbogado;
+	public Abogado getAbogado() {
+		return abogado;
+	}
+
+	public void setAbogado(Abogado abogado) {
+		this.abogado = abogado;
 	}
 
 	public String getDescripcion() {
@@ -75,19 +87,36 @@ public class Declaracion_aduanera implements Serializable{
 		Descripcion = descripcion;
 	}
 
-	public Declaracion_aduanera(int idDeclaracion, int idFlete, int idRequisito, int idAbogado, String descripcion) {
+	public Declaracion_aduanera(int idDeclaracion, Flete flete, Requisito_legal requisito_legal, Abogado abogado,
+			String descripcion) {
 		super();
 		this.idDeclaracion = idDeclaracion;
-		this.idFlete = idFlete;
-		this.idRequisito = idRequisito;
-		this.idAbogado = idAbogado;
+		this.flete = flete;
+		this.requisito_legal = requisito_legal;
+		this.abogado = abogado;
 		Descripcion = descripcion;
 	}
 
-	public Declaracion_aduanera() {
-		super();
-		// TODO Auto-generated constructor stub
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + idDeclaracion;
+		return result;
 	}
-	
-	
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Declaracion_aduanera other = (Declaracion_aduanera) obj;
+		if (idDeclaracion != other.idDeclaracion)
+			return false;
+		return true;
+	}
+
 }

@@ -24,31 +24,37 @@ public class Categoria_Producto implements Serializable {
 	
 	@ManyToOne
 	@JoinColumn(name = "idCategoria",nullable = false)
-	private int idCategoria;
+	private Categoria categoria;
 	@ManyToOne
-	@JoinColumn(name = "idProducto",nullable = false)
-	private int idProducto;
+	@JoinColumn(name = "idProductoImportar",nullable = false)
+	private ProductoImportar productoimportar;
 	////////
-	public int getIdCategoria() {
-		return idCategoria;
+	
+	
+	
+	public Categoria getCategoria() {
+		return categoria;
 	}
-	public void setIdCategoria(int idCategoria) {
-		this.idCategoria = idCategoria;
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
 	}
-	public int getIdProductoImpor() {
-		return idProducto;
-	}
-	public void setIdProductoImpor(int idProductoImpor) {
-		this.idProducto = idProductoImpor;
-	}
-	public Categoria_Producto(int idCategoria, int idProductoImpor) {
-		super();
-		this.idCategoria = idCategoria;
-		this.idProducto = idProductoImpor;
-	}
+	
 	public Categoria_Producto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	public ProductoImportar getProductoimportar() {
+		return productoimportar;
+	}
+	public void setProductoimportar(ProductoImportar productoimportar) {
+		this.productoimportar = productoimportar;
+	}
+	public Categoria_Producto( Categoria categoria, ProductoImportar productoimportar) {
+		super();
+	
+		this.categoria = categoria;
+		this.productoimportar = productoimportar;
+	}
+
 	
 }

@@ -24,7 +24,7 @@ public class Transportista implements Serializable {
 	private String Nombre;
 	@Column(name = "Descripcion",nullable = false,length = 50)
 	private String Descripcion;
-	@Column(name = "Precio por Kg",nullable = false,length = 50)
+	@Column(name = "PrecioporKg",nullable = false,precision = 2)
 	private double PrecioxKg;
 	
 ///////////////
@@ -63,5 +63,26 @@ public class Transportista implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + idTransportista;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Transportista other = (Transportista) obj;
+		if (idTransportista != other.idTransportista)
+			return false;
+		return true;
+	}
+	
 
 }
