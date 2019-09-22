@@ -45,7 +45,7 @@ public class Categoria implements Serializable {
 	}
 	public Categoria() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 	@Override
 	public int hashCode() {
