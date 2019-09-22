@@ -29,9 +29,6 @@ public class AbogadoDaoImpl implements IAbogadoDao, Serializable {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		
-		
-
 	}
 
 	@Transactional
@@ -43,8 +40,6 @@ public class AbogadoDaoImpl implements IAbogadoDao, Serializable {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		
-		
 
 	}
 
