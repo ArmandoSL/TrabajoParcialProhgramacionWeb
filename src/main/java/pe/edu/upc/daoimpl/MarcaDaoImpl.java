@@ -14,6 +14,10 @@ import pe.edu.upc.entity.Marca;
 
 public class MarcaDaoImpl implements IMarcaDao,Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@PersistenceContext(unitName = "TParcial")
 	private EntityManager em;
 	

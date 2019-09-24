@@ -4,7 +4,7 @@ import java.util.List;
 
 import pe.edu.upc.entity.ProductoImportar;
 
-public interface IProductoImportar {
+public interface IProductoImportarDao {
 
 	public void insertar(ProductoImportar productoImportar);
 

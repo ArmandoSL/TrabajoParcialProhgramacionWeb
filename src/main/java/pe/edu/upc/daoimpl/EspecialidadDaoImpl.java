@@ -60,7 +60,7 @@ public class EspecialidadDaoImpl implements IEspecialidadDao,Serializable {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		return null;
+		return lista;
 	}
 
 	

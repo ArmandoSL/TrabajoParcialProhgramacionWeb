@@ -4,7 +4,7 @@ import java.util.List;
 
 import pe.edu.upc.entity.LineadePedido;
 
-public interface ILineaPedido {
+public interface ILineaPedidoDao {
 	public void insertar(LineadePedido lineadePedido);
 
 	public void eliminar(int lineadePedido);

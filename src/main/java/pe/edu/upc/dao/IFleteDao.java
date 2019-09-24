@@ -4,7 +4,7 @@ import java.util.List;
 
 import pe.edu.upc.entity.Flete;
 
-public interface IFlete {
+public interface IFleteDao {
 	public void insertar(Flete flete);
 
 	public void eliminar(int idFlete);
