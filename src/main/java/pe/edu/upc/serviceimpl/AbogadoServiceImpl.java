@@ -20,7 +20,7 @@ public class AbogadoServiceImpl implements IAbogadoService, Serializable {
 	private IAbogadoDao aD;
 	@Override
 	public void insertar(Abogado abogado) {
-		aD.insertar(abogado);
+		 aD.insertar(abogado);
 	}
 	@Override
 	public List<Abogado> listar() {

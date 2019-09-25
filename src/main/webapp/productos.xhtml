@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="master.xhtml">
+	<ui:define name="title">
+        .:Registro de Productos:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>Productos</span>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+			<h:outputLabel for="idMotor" value="Id " styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="idMotor"
+				styleClass="form-control"
+				value="#{productosController.productos.idProductos}" required="true"></p:inputText>
+			<h:outputLabel for="NombreProductos" value="Nombres "
+				styleClass="control-label">
+			</h:outputLabel>
+
+			<p:inputText autocomplete="off" id="NombreProductos"
+				styleClass="form-control"
+				value="#{productosController.productos.NombreProductos}"
+				maxlength="30" required="true">
+			</p:inputText>
+
+			<p:commandButton value="Agregar"
+				actionListener="#{productosController.insertar()}"
+				styleClass="btn btn-primary " update="@form"
+				action="listProductos?faces-redirect=true">
+			</p:commandButton>
+			<p:commandButton value="Cancelar"
+				action="listProductos?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false">
+			</p:commandButton>
+
+
+
+			<p:growl id="growl" sticky="true" showDetail="true" life="3000"></p:growl>
+
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+
+</ui:composition>
+</html>
