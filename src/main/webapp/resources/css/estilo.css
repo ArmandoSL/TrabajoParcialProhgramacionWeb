@@ -1,0 +1,48 @@
+@charset "ISO-8859-1";
+*,
+body {
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+    font-weight: 'Roboto';
+    font-weight: 100;
+}
+
+#sidebar {
+    display: block;
+    list-style: none;
+}
+
+.paneladmi {
+    color: whitesmoke;
+    list-style: none;
+    font-size: 35px;
+    padding-left: 35px;
+}
+
+.paneli a {
+    color: white;
+    list-style: none;
+    font-size: 25px;
+    padding-left: 40px;
+    text-decoration: none;
+}
+
+.paneli2 a {
+    padding-left: 70px;
+    color: white;
+    list-style: none;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.paneli {
+    height: 40px;
+    width: 100%;
+    margin-top: 20px
+}
+
+.paneli2 {
+    height: 30px;
+    width: 100%;
+}

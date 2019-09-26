@@ -1,58 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" class="no-js" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta charset="utf-8" />
+	<title><ui:insert name="title"></ui:insert></title>
+	<meta name="generator" content="Bootply" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<link
+		href='https://fonts.googleapis.com/css?family=Roboto:400,300,500|Ubuntu+Condensed'
+		rel='stylesheet' type='text/css' />
+	<link rel="shortcut icon" type="image/x-icon"
+		href="resources/img/favicon.ico" />
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="resources/css/estilo.css" />
 
-<head>
+	<h:outputStylesheet name="css/bootstrap.min.css" />
+	<h:outputStylesheet name="css/main_base.css" />
+	<h:outputStylesheet name="css/font_ico.css" />
+	<ui:insert name="headCont"></ui:insert>
+</h:head>
+<h:body>
 
-<meta charset="utf-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<div class="row" style="height: 100vh">
+		<div class="col-lg-3 col-md-3" style="background-color: black;">
+			<h1
+				style="color: white; font-size: 30px; text-align: center; padding: 20px 0px; height: 10vh; border-bottom: white 1px solid;">DIVEMOTOR</h1>
 
+			<ul class="nav nav-stacked panel" id="sidebar">
 
-<meta name="description" content="" />
-<meta name="author" content="" />
-<title>Freelancer - Start Bootstrap Theme</title>
+				<img src="resources/img/qwe.png" style="align-items: center"
+					id="imgadmi" height="100px"/>
+				<li class="paneladmi"><a> Administrador</a></li>
 
-<!-- Custom fonts for this theme -->
-<link href="resources/vendor/fontawesome-free/css/all.min.css"
-	rel="stylesheet" type="text/css" />
+				<li class="paneli"><a href="listMotor.xhtml"> Importacion</a></li>
+				<li class="paneli2"><a href="listPart.xhtml ">Gestión de
+						productos</a></li>
+				<li class="paneli2 "><a href="listMotor.xhtml"> Elección de
+						flete</a></li>
+				<li class="paneli2"><a href="listPart.xhtml ">Declaración
+						aduana</a></li>
+				<li class="paneli2"><a href="listMotor.xhtml"> Selección de
+						abogados</a></li>
 
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
-	rel="stylesheet" type="text/css" />
-<link
-	href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
-	rel="stylesheet" type="text/css" />
-<link href="resources/css/freelancer.min.css" rel="stylesheet" />
-</head>
-
-<body id="page-top">
-
-	<!-- Navigation -->
-	<nav
-		class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top"
-		id="mainNav">
-		<div class="container">
-			<a class="navbar-brand js-scroll-trigger" href="#page-top">Listado
-				de Motores y Partes</a>
-			<button
-				class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
-				type="button" data-toggle="collapse" data-target="#navbarResponsive"
-				aria-controls="navbarResponsive" aria-expanded="false"
-				aria-label="Toggle navigation">
-				Menu <i class="fas fa-bars"></i>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-						href="index.xhtml">Inicio</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-						href="listMotor.xhtml">Motores</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-						href="listPart.xhtml">Partes</a></li>
-				</ul>
-			</div>
+				<li class="paneli"><a href="listMotor.xhtml"> Registrar</a></li>
+				<li class="paneli2"><a href="listMotor.xhtml"> Abogados</a></li>
+				<li class="paneli2"><a href="listMotor.xhtml"> Categoria</a></li>
+				<li class="paneli2"><a href="listMotor.xhtml"> Marca</a></li>
+				<li class="paneli2"><a href="listMotor.xhtml">
+						Transportista</a></li>
+			</ul>
 		</div>
-	</nav>
-<body/>
+		<div class="col-lg-9 col-md-9" style="padding: 0;">
+			<ui:insert name="content">
+			</ui:insert>
+		</div>
+	</div>
+
+	<!--/container-->
+	<ui:insert name="footerCont"></ui:insert>
+
+
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+</h:body>
+</html>
