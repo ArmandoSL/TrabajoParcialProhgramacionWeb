@@ -1,0 +1,81 @@
+package pe.edu.upc.controller;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+
+import pe.edu.upc.entity.Productos;
+import pe.edu.upc.service.IProductosService;
+
+public class ProductosController implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	@Inject
+	private IProductosService mS;
+	private Productos productos;
+	List<Productos> listaProductoss;
+
+	@PostConstruct
+	public void init() {
+		this.listaProductoss = new ArrayList<Productos>();
+		this.productos = new Productos();
+		this.listar();
+	}
+
+	public String nuevoProducto() {
+		this.setProductos(new Productos());
+		return "producto.xhtml";
+	}
+
+	public void insertar() {
+		try {
+			mS.insertar(productos);
+			limpiarProductos();
+			this.listar();
+		} catch (Exception e) {
+			e.getMessage();
+		}
+	}
+
+	public void listar() {
+		try {
+			listaProductoss = mS.listar();
+		} catch (Exception e) {
+			e.getMessage();
+		}
+	}
+
+	public void limpiarProductos() {
+		this.init();
+	}
+
+	public void eliminar(Productos pro) {
+		try {
+			mS.eliminar(pro.getIdProducto());
+			listar();
+
+		} catch (Exception e) {
+			e.getMessage();
+		}
+	}
+
+	public Productos getProductos() {
+		return productos;
+	}
+
+	public void setProductos(Productos productos) {
+		this.productos = productos;
+	}
+
+	public List<Productos> getListaProductoss() {
+		return listaProductoss;
+	}
+
+	public void setListaProductoss(List<Productos> listaProductoss) {
+		this.listaProductoss = listaProductoss;
+	}
+
+}
