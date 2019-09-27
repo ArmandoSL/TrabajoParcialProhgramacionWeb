@@ -37,6 +37,9 @@ public class DeclaracionAduaneraDaoImpl implements Serializable, IDeclaracionAdu
 	@Override
 	public void eliminar(int idDeclaracion_aduanera) {
 		Declaracion_aduanera declara = new Declaracion_aduanera();
+
+		em.remove(declara);
+
 		try {
 			declara = em.getReference(Declaracion_aduanera.class, idDeclaracion_aduanera);
 		} catch (Exception e) {

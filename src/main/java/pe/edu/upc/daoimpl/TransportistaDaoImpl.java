@@ -36,6 +36,7 @@ public class TransportistaDaoImpl implements Serializable, ITransportistaDao {
 	@Override
 	public void eliminar(int idTransportista) {
 		Transportista abog = new Transportista();
+		em.remove(abog);
 		try {
 			abog = em.getReference(Transportista.class, idTransportista);
 		} catch (Exception e) {

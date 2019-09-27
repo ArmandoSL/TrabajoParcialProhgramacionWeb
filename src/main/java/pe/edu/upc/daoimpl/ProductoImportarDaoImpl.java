@@ -12,7 +12,7 @@ import javax.transaction.Transactional;
 import pe.edu.upc.dao.IProductoImportarDao;
 import pe.edu.upc.entity.ProductoImportar;
 
-public class ProductoImportarDaoImpl implements Serializable,IProductoImportarDao{
+public class ProductoImportarDaoImpl implements Serializable, IProductoImportarDao {
 
 	/**
 	 * 
@@ -21,6 +21,7 @@ public class ProductoImportarDaoImpl implements Serializable,IProductoImportarDa
 
 	@PersistenceContext(unitName = "TParcial")
 	private EntityManager em;
+
 	@Transactional
 	@Override
 	public void insertar(ProductoImportar productoImportar) {
@@ -29,19 +30,22 @@ public class ProductoImportarDaoImpl implements Serializable,IProductoImportarDa
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		
+
 	}
+
 	@Transactional
 	@Override
 	public void eliminar(int idProductoImportar) {
 		ProductoImportar productoImportar = new ProductoImportar();
+		em.remove(productoImportar);
 		try {
 			productoImportar = em.getReference(ProductoImportar.class, idProductoImportar);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		
+
 	}
+
 	@Transactional
 	@Override
 	public void modificar(ProductoImportar productoImportar) {
@@ -55,16 +59,15 @@ public class ProductoImportarDaoImpl implements Serializable,IProductoImportarDa
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<ProductoImportar> listar() {
-		List<ProductoImportar>lista=new ArrayList<>();
+		List<ProductoImportar> lista = new ArrayList<>();
 		try {
-			Query q=em.createQuery("select a from ProductoImportar a");
-			lista=(List<ProductoImportar>) q.getResultList();
+			Query q = em.createQuery("select a from ProductoImportar a");
+			lista = (List<ProductoImportar>) q.getResultList();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 		return lista;
 
 	}
-	
 
 }

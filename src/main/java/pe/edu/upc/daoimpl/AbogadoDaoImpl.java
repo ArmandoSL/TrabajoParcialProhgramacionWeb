@@ -35,6 +35,8 @@ public class AbogadoDaoImpl implements IAbogadoDao, Serializable {
 	@Override
 	public void eliminar(int idAbogado) {
 		Abogado abog = new Abogado();
+		em.remove(abog);
+
 		try {
 			abog = em.getReference(Abogado.class, idAbogado);
 		} catch (Exception e) {

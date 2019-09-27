@@ -35,11 +35,14 @@ public class FleteDaoImpl implements Serializable, IFleteDao {
 	@Override
 	public void eliminar(int idFlete) {
 		Flete flete = new Flete();
+
+		em.remove(flete);
+
 		try {
 			flete = em.getReference(Flete.class, idFlete);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-		}		
+		}
 	}
 
 	@Transactional
@@ -55,10 +58,10 @@ public class FleteDaoImpl implements Serializable, IFleteDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Flete> listar() {
-		List<Flete>lista=new ArrayList<>();
+		List<Flete> lista = new ArrayList<>();
 		try {
-			Query q=em.createQuery("select a from Flete a");
-			lista=(List<Flete>) q.getResultList();
+			Query q = em.createQuery("select a from Flete a");
+			lista = (List<Flete>) q.getResultList();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
