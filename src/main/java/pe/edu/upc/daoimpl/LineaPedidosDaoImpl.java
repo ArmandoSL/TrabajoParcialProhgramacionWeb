@@ -31,21 +31,21 @@ public class LineaPedidosDaoImpl implements ILineaPedidoDao, Serializable {
 			System.out.println(e.getMessage());
 		}
 	}
+
 	@Transactional
 	@Override
 	public void eliminar(int lineadePedido) {
 
 		LineadePedido lineapedi = new LineadePedido();
-<<<<<<< HEAD
+
 		em.remove(lineapedi);
-=======
->>>>>>> branch 'master' of https://github.com/ArmandoSL/TrabajoParcialProhgramacionWeb.git
 		try {
 			lineapedi = em.getReference(LineadePedido.class, lineadePedido);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 	}
+
 	@Transactional
 	@Override
 	public void modificar(LineadePedido lineadePedido) {

@@ -12,7 +12,7 @@ import javax.transaction.Transactional;
 import pe.edu.upc.dao.IRequisitoLegalDao;
 import pe.edu.upc.entity.Requisito_legal;
 
-public class RequisitoLegalDaoImpl implements Serializable,IRequisitoLegalDao {
+public class RequisitoLegalDaoImpl implements Serializable, IRequisitoLegalDao {
 
 	/**
 	 * 
@@ -21,6 +21,7 @@ public class RequisitoLegalDaoImpl implements Serializable,IRequisitoLegalDao {
 
 	@PersistenceContext(unitName = "TParcial")
 	private EntityManager em;
+
 	@Transactional
 	@Override
 	public void insertar(Requisito_legal requisito) {
@@ -30,20 +31,19 @@ public class RequisitoLegalDaoImpl implements Serializable,IRequisitoLegalDao {
 			System.out.println(e.getMessage());
 		}
 	}
+
 	@Transactional
 	@Override
 	public void eliminar(int idRequisito_legal) {
 		Requisito_legal abog = new Requisito_legal();
-<<<<<<< HEAD
 		em.remove(abog);
-=======
->>>>>>> branch 'master' of https://github.com/ArmandoSL/TrabajoParcialProhgramacionWeb.git
 		try {
 			abog = em.getReference(Requisito_legal.class, idRequisito_legal);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 	}
+
 	@Transactional
 	@Override
 	public void modificar(Requisito_legal requisito) {
@@ -51,16 +51,16 @@ public class RequisitoLegalDaoImpl implements Serializable,IRequisitoLegalDao {
 			em.merge(requisito);
 		} catch (Exception e) {
 			e.getMessage();
-		}	
+		}
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Requisito_legal> listar() {
-		List<Requisito_legal>lista=new ArrayList<>();
+		List<Requisito_legal> lista = new ArrayList<>();
 		try {
-			Query q=em.createQuery("select a from Requisitos_legales a");
-			lista=(List<Requisito_legal>) q.getResultList();
+			Query q = em.createQuery("select a from Requisitos_legales a");
+			lista = (List<Requisito_legal>) q.getResultList();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -68,6 +68,4 @@ public class RequisitoLegalDaoImpl implements Serializable,IRequisitoLegalDao {
 
 	}
 
-	
-	
 }
