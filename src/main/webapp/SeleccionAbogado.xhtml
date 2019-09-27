@@ -1,11 +1,70 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 
-<h:head></h:head> 
-<body> 
+<ui:composition template="master.xhtml">
+.:Registro de Motores:.
+	<ui:define name="title">
+	</ui:define>
+	<ui:define name="titleCont">
+		<span>Motor</span>
+	</ui:define>
+	<ui:define name="content">
+		<h:form>
+			<div>
 
-</body> 
+				<h:outputLabel for="codInforme" value="Código de documentación " />
+				<h:selectOneMenu id="codInforme"
+					value="#{declaracionAduaneraController.informeimp.idInformeImportacion}">
+					<f:selectItems value="#{declaracionAduaneraController.listadeclaracion}" var="cod"
+						itemLabel="#{cod.idInformeImportacion}" itemValue="#{cod}" />
+				</h:selectOneMenu>
+
+				<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group table-responsive box-table-class">
+						<p:dataTable id="lstAbogado" var="abo"
+							value="#{abogadoController.listAbogado}" paginator="true"
+							paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
+							rows="10" styleClass="table table-bordered"
+							emptyMessage="No existen registros" rowIndexVar="item"
+							style="margin-bottom:0">
+
+							<p:column headerText="Id" sortBy="#{abo.idAbogado}">
+								<h:outputText value="#{abo.idAbogado}" />
+							</p:column>
+
+							<p:column headerText="Nombre" sortBy="#{abo.nombreAbogado}">
+								<h:outputText value="#{abo.nombreAbogado}" />
+							</p:column>
+							
+							<p:column headerText="Especialidad" sortBy="#{abo.especialidad}">
+								<h:outputText value="#{abo.especialidad}" />
+							</p:column>
+							
+							<p:column headerText="Precio" sortBy="#{abo.precio}">
+								<h:outputText value="#{abo.precio}" />
+							</p:column>
+							
+							<p:column headerText="Fecha estimada " sortBy="#{abo.fechaEstimada}">
+								<h:outputText value="#{abo.fechaEstimada}">
+									<f:convertDateTime pattern="dd-MM-yyyy" timeZone="UTC" />
+								</h:outputText>
+							</p:column>
+						</p:dataTable>
+					</div>
+				</div>
+			</div>
+				<br /><br />
+				<button>Confirmar</button><button>Cancelar</button>
+			</div>
+		</h:form>
+
+
+
+	</ui:define>
+</ui:composition>
 </html>

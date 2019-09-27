@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/master.xhtml">
+	<ui:define name="title">
+        .:Informe de Importación:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>Informe</span>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+		<div>
+			<h:outputLabel for="idFlete" value="Id flete preparado" />
+			<h:selectOneMenu id="idFlete"
+				value="#{declaracionAduaneraController.informeimp.flete}">
+				<f:selectItems value="#{fleteController.listaflete}" var="fle"
+					itemLabel="#{fle.idFlete}" itemValue="#{fle}" placeholder="2001" />
+			</h:selectOneMenu>
+		</div>
+		<div>
+			<h:outputLabel value="Requisitos legales " /><br/><br/>
+			<h:inputTextarea value="" /><br/><br/>
+			<h:outputLabel value="Adjuntar archivo " />
+			<h:commandButton>
+				<p:outputLabel value="Insertar documento"></p:outputLabel>
+				<p:fileUpload></p:fileUpload>
+			</h:commandButton>
+		</div>
+		<br/><br/>
+		<div>
+			<h:commandButton action="#{declaracionAduaneraController.insertar()}" value="Enviar" />
+		</div>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>
