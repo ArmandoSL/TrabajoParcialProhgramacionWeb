@@ -1,0 +1,89 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="master.xhtml">
+	<ui:define name="title">
+        .:Listado de Motores:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>Motores </span>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="form-group">
+						<h:outputLabel for="nombres" value="Listar Transportistas"
+						styleClass="control-label" />
+						<p:inputText autocomplete="off" id="nombres"
+							styleClass="form-control"
+							value="Texto" maxlength="120" />
+					</div>
+				</div>
+				<div class="">
+					<div class="">
+						<span style="display: block; height: 30px;"></span>
+						<p:commandButton value="Buscar" update=""
+							actionListener=""
+							styleClass="btn btn-default btn-border" ajax="true" />
+						<p:commandButton value="Añadir"
+							action=""
+							styleClass="btn btn-primary" ajax="false" />
+					</div>
+				</div>
+		</div>
+
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group table-responsive box-table-class">
+						<p:dataTable id="" var=""
+							value="" paginator="true"
+							paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
+							rows="10" styleClass="table table-bordered"
+							emptyMessage="No existen registros" rowIndexVar="item"
+							style="margin-bottom:0">
+
+							<p:column headerText="Id" sortBy="">
+								<h:outputText value="" />
+							</p:column>
+
+							<p:column headerText="Nombre" sortBy="">
+								<h:outputText value="" />
+							</p:column>
+
+							<p:column headerText="Descripción" sortBy="">
+								<h:outputText value="" />
+							</p:column>
+
+
+						</p:dataTable>
+						<h:outputLabel value="" />
+						<h:commandLink>
+							<p:outputLabel value="ExportarExcel"></p:outputLabel>
+							<p:dataExporter type="xls" target=""
+								fileName="ExcelWeb" pageOnly="false" />
+						</h:commandLink>
+						<h:commandLink>
+							<p:outputLabel value="ExportarPdf"></p:outputLabel>
+							<p:dataExporter type="pdf" target=""
+								fileName="PdfWeb" />
+						</h:commandLink>
+					</div>
+
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+
+</html>
