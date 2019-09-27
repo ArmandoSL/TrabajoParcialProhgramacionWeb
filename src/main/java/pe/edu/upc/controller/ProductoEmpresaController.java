@@ -9,7 +9,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import pe.edu.upc.entity.ProductoEmpresa;
+import pe.edu.upc.entity.Producto;
 import pe.edu.upc.service.IProductoEmpresaService;
 
 @Named
@@ -22,19 +22,19 @@ public class ProductoEmpresaController implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Inject
 	private IProductoEmpresaService pService;
-	private ProductoEmpresa productoempresa;
+	private Producto productoempresa;
 	private String mensaje = "";
-	List<ProductoEmpresa> listaproductoemp;
+	List<Producto> listaproductoemp;
 
 	@PostConstruct
 	public void init() {
-		this.listaproductoemp = new ArrayList<ProductoEmpresa>();
-		this.productoempresa = new ProductoEmpresa();
+		this.listaproductoemp = new ArrayList<Producto>();
+		this.productoempresa = new Producto();
 		this.lista();
 	}
 
 	public String newProductoEmpresa() {
-		this.setProductoempresa(new ProductoEmpresa());
+		this.setProductoempresa(new Producto());
 		return ".xhtml";
 	}
 
@@ -61,7 +61,7 @@ public class ProductoEmpresaController implements Serializable {
 		this.init();
 	}
 
-	public void Eliminar(ProductoEmpresa produc) {
+	public void Eliminar(Producto produc) {
 		try {
 			pService.eliminar(produc.getIdProductoEmpresa());
 		} catch (Exception e) {
@@ -78,11 +78,11 @@ public class ProductoEmpresaController implements Serializable {
 		this.pService = pService;
 	}
 
-	public ProductoEmpresa getProductoempresa() {
+	public Producto getProductoempresa() {
 		return productoempresa;
 	}
 
-	public void setProductoempresa(ProductoEmpresa productoempresa) {
+	public void setProductoempresa(Producto productoempresa) {
 		this.productoempresa = productoempresa;
 	}
 
@@ -94,16 +94,16 @@ public class ProductoEmpresaController implements Serializable {
 		this.mensaje = mensaje;
 	}
 
-	public List<ProductoEmpresa> getListaproductoemp() {
+	public List<Producto> getListaproductoemp() {
 		return listaproductoemp;
 	}
 
-	public void setListaproductoemp(List<ProductoEmpresa> listaproductoemp) {
+	public void setListaproductoemp(List<Producto> listaproductoemp) {
 		this.listaproductoemp = listaproductoemp;
 	}
 
-	public ProductoEmpresaController(IProductoEmpresaService pService, ProductoEmpresa productoempresa, String mensaje,
-			List<ProductoEmpresa> listaproductoemp) {
+	public ProductoEmpresaController(IProductoEmpresaService pService, Producto productoempresa, String mensaje,
+			List<Producto> listaproductoemp) {
 		super();
 		this.pService = pService;
 		this.productoempresa = productoempresa;

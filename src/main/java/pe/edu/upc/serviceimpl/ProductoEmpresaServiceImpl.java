@@ -8,7 +8,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import pe.edu.upc.dao.IProductoEmpresaDao;
-import pe.edu.upc.entity.ProductoEmpresa;
+import pe.edu.upc.entity.Producto;
 import pe.edu.upc.service.IProductoEmpresaService;
 
 @Named
@@ -20,7 +20,7 @@ public class ProductoEmpresaServiceImpl implements IProductoEmpresaService, Seri
 	private IProductoEmpresaDao peD;
 
 	@Override
-	public void insertar(ProductoEmpresa productoEmp) {
+	public void insertar(Producto productoEmp) {
 		peD.insertar(productoEmp);
 	}
 
@@ -30,12 +30,12 @@ public class ProductoEmpresaServiceImpl implements IProductoEmpresaService, Seri
 	}
 
 	@Override
-	public void modificar(ProductoEmpresa productoEmp) {
+	public void modificar(Producto productoEmp) {
 		peD.modificar(productoEmp);
 	}
 
 	@Override
-	public List<ProductoEmpresa> listar() {
+	public List<Producto> listar() {
 		return peD.listar();
 	}
 

@@ -13,8 +13,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "DeclaracionAduanera")
-public class Declaracion_aduanera implements Serializable {
+@Table(name = "InformeImportacion")
+public class Informe_importacion implements Serializable {
 	/**
 	 * 
 	 */
@@ -22,10 +22,10 @@ public class Declaracion_aduanera implements Serializable {
 	/////////
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idDeclaracion;
+	private int idInformeImportacion;
 
 	@OneToOne
-	@JoinColumn(name = "idFlete", nullable = false)
+	@JoinColumn(name ="idFlete", nullable = false)
 	private Flete flete;
 
 	@ManyToOne
@@ -40,17 +40,29 @@ public class Declaracion_aduanera implements Serializable {
 	@Column(name = "Descripcion", nullable = false, length = 50)
 	private String Descripcion;
 
-	public int getIdDeclaracion() {
-		return idDeclaracion;
-	}
-
-	public void setIdDeclaracion(int idDeclaracion) {
-		this.idDeclaracion = idDeclaracion;
-	}
+	
 
 	
 
-	public Declaracion_aduanera() {
+	public Informe_importacion(int idInformeImportacion, Flete flete, Requisito_legal requisito_legal, Abogado abogado,
+			String descripcion) {
+		super();
+		this.idInformeImportacion = idInformeImportacion;
+		this.flete = flete;
+		this.requisito_legal = requisito_legal;
+		this.abogado = abogado;
+		Descripcion = descripcion;
+	}
+
+	public int getIdInformeImportacion() {
+		return idInformeImportacion;
+	}
+
+	public void setIdInformeImportacion(int idInformeImportacion) {
+		this.idInformeImportacion = idInformeImportacion;
+	}
+
+	public Informe_importacion() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -87,21 +99,13 @@ public class Declaracion_aduanera implements Serializable {
 		Descripcion = descripcion;
 	}
 
-	public Declaracion_aduanera(int idDeclaracion, Flete flete, Requisito_legal requisito_legal, Abogado abogado,
-			String descripcion) {
-		super();
-		this.idDeclaracion = idDeclaracion;
-		this.flete = flete;
-		this.requisito_legal = requisito_legal;
-		this.abogado = abogado;
-		Descripcion = descripcion;
-	}
+	
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + idDeclaracion;
+		result = prime * result + idInformeImportacion;
 		return result;
 	}
 
@@ -113,8 +117,8 @@ public class Declaracion_aduanera implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Declaracion_aduanera other = (Declaracion_aduanera) obj;
-		if (idDeclaracion != other.idDeclaracion)
+		Informe_importacion other = (Informe_importacion) obj;
+		if (idInformeImportacion != other.idInformeImportacion)
 			return false;
 		return true;
 	}

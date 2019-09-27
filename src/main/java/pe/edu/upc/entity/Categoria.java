@@ -22,6 +22,9 @@ public class Categoria implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idCategoria;
+	@Column(name = "Nombre", nullable = false, length = 50)
+	private String Nombre;
+	
 	@Column(name = "Descripcion", nullable = false, length = 50)
 	private String Descripcion;
 	
@@ -38,15 +41,26 @@ public class Categoria implements Serializable {
 	public void setDescripcion(String descripcion) {
 		Descripcion = descripcion;
 	}
-	public Categoria(int idCategoria, String descripcion) {
+
+
+	public Categoria(int idCategoria, String nombre, String descripcion) {
 		super();
 		this.idCategoria = idCategoria;
+		Nombre = nombre;
 		Descripcion = descripcion;
+	}
+	public String getNombre() {
+		return Nombre;
+	}
+	public void setNombre(String nombre) {
+		Nombre = nombre;
 	}
 	public Categoria() {
 		super();
 		
 	}
+	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

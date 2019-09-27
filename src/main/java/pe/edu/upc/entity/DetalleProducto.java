@@ -25,8 +25,8 @@ public class DetalleProducto implements Serializable {
 	private int idDetalle;
 
 	@ManyToOne
-	@JoinColumn(name = "idProductoImportar", nullable = false)
-	private ProductoImportar productoImportar;
+	@JoinColumn(name = "idProducto", nullable = false)
+	private Producto producto;
 
 	@ManyToOne
 	@JoinColumn(name = "idFlete", nullable = false)
@@ -49,12 +49,14 @@ public class DetalleProducto implements Serializable {
 		this.idDetalle = idDetalle;
 	}
 
-	public ProductoImportar getProductoImportar() {
-		return productoImportar;
+	
+
+	public Producto getProducto() {
+		return producto;
 	}
 
-	public void setProductoImportar(ProductoImportar productoImportar) {
-		this.productoImportar = productoImportar;
+	public void setProducto(Producto producto) {
+		this.producto = producto;
 	}
 
 	public Flete getFlete() {
@@ -97,11 +99,11 @@ public class DetalleProducto implements Serializable {
 		Peso = peso;
 	}
 
-	public DetalleProducto(int idDetalle, ProductoImportar productoImportar, Flete flete, int cantidad, int importe,
+	public DetalleProducto(int idDetalle, Producto Producto, Flete flete, int cantidad, int importe,
 			double descuento, double peso) {
 		super();
 		this.idDetalle = idDetalle;
-		this.productoImportar = productoImportar;
+		this.producto = Producto;
 		this.flete = flete;
 		Cantidad = cantidad;
 		Importe = importe;

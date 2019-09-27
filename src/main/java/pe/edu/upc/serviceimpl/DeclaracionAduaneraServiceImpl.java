@@ -8,7 +8,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import pe.edu.upc.dao.IDeclaracionAduaneraDao;
-import pe.edu.upc.entity.Declaracion_aduanera;
+import pe.edu.upc.entity.Informe_importacion;
 import pe.edu.upc.service.IDeclaracionAduaneraService;
 
 @Named
@@ -20,7 +20,7 @@ public class DeclaracionAduaneraServiceImpl implements IDeclaracionAduaneraServi
 	private IDeclaracionAduaneraDao daD;
 	
 	@Override
-	public void insertar(Declaracion_aduanera declaracion_aduanera) {
+	public void insertar(Informe_importacion declaracion_aduanera) {
 		daD.insertar(declaracion_aduanera);
 	}
 
@@ -30,12 +30,12 @@ public class DeclaracionAduaneraServiceImpl implements IDeclaracionAduaneraServi
 	}
 
 	@Override
-	public void modificar(Declaracion_aduanera declaracion_aduanera) {
+	public void modificar(Informe_importacion declaracion_aduanera) {
 		daD.modificar(declaracion_aduanera);
 	}
 
 	@Override
-	public List<Declaracion_aduanera> listar() {
+	public List<Informe_importacion> listar() {
 		return daD.listar();
 	}
 

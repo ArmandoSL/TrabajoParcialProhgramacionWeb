@@ -10,7 +10,7 @@ import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import pe.edu.upc.dao.IProductoEmpresaDao;
-import pe.edu.upc.entity.ProductoEmpresa;
+import pe.edu.upc.entity.Producto;
 
 public class ProductoEmpresaDaoImpl implements Serializable, IProductoEmpresaDao {
 
@@ -24,7 +24,7 @@ public class ProductoEmpresaDaoImpl implements Serializable, IProductoEmpresaDao
 
 	@Transactional
 	@Override
-	public void insertar(ProductoEmpresa productoEmp) {
+	public void insertar(Producto productoEmp) {
 		try {
 			em.persist(productoEmp);
 		} catch (Exception e) {
@@ -36,10 +36,10 @@ public class ProductoEmpresaDaoImpl implements Serializable, IProductoEmpresaDao
 	@Transactional
 	@Override
 	public void eliminar(int idproductoEmp) {
-		ProductoEmpresa productoEmp = new ProductoEmpresa();
+		Producto productoEmp = new Producto();
 		em.remove(productoEmp);
 		try {
-			productoEmp = em.getReference(ProductoEmpresa.class, idproductoEmp);
+			productoEmp = em.getReference(Producto.class, idproductoEmp);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -48,7 +48,7 @@ public class ProductoEmpresaDaoImpl implements Serializable, IProductoEmpresaDao
 
 	@Transactional
 	@Override
-	public void modificar(ProductoEmpresa productoEmp) {
+	public void modificar(Producto productoEmp) {
 		try {
 			em.merge(productoEmp);
 		} catch (Exception e) {
@@ -59,11 +59,11 @@ public class ProductoEmpresaDaoImpl implements Serializable, IProductoEmpresaDao
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<ProductoEmpresa> listar() {
-		List<ProductoEmpresa> lista = new ArrayList<>();
+	public List<Producto> listar() {
+		List<Producto> lista = new ArrayList<>();
 		try {
 			Query q = em.createQuery("select a from ProductoEmpresa a");
-			lista = (List<ProductoEmpresa>) q.getResultList();
+			lista = (List<Producto>) q.getResultList();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
