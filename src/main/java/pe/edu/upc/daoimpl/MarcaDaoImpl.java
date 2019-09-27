@@ -35,11 +35,10 @@ public class MarcaDaoImpl implements IMarcaDao, Serializable {
 	@Transactional
 	@Override
 	public void eliminar(int idMarca) {
-		Marca marca = new Marca();
-
-		em.remove(marca);
+		Marca marca = new Marca();		
 		try {
 			marca = em.getReference(Marca.class, idMarca);
+			em.remove(marca);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -53,7 +52,7 @@ public class MarcaDaoImpl implements IMarcaDao, Serializable {
 		try {
 			em.merge(marca);
 		} catch (Exception e) {
-			e.getMessage();
+			System.out.println(e.getMessage());
 		}
 
 	}

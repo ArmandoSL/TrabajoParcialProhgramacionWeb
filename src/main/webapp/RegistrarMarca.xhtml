@@ -1,26 +1,46 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <ui:composition template="master.xhtml">
+.:Registro de Motores:.
 	<ui:define name="title">
 	</ui:define>
-
+	<ui:define name="titleCont">
+		<span>Motor</span>
+	</ui:define>
 	<ui:define name="content">
-		<label for="title" class="registCategoria">Registrar Categoria</label>
-		<li class="labelCategoria"><a>Nombre de Categoria</a> <input
-			type="text" placeholder="Camiones cisterna" class="Espaciado7" /></li>
+		<h:form>
+			<div>
+				<h:outputLabel for="idMarca" value="Id" styleClass="control-label" />
+				<p:inputText autocomplete="off" id="idMarca"
+					styleClass="form-control" value="#{marcaController.marca.idMarca}"
+					required="true" />
 
-		<li class="Espaciado8"><a style="align-self: initial">Descripcion</a></li>
-		<textarea class="Espaciado9" name="descripcion" id="descripcion"
-			cols="50" rows="3"
-			placeholder="Vehículos pesados a los que se anexan tanques empleados para transportar y mantener grandes cantidades de líquido."></textarea>
-		<li class="buttonCategoria">
-			<button class="Espaciado10">Cancelar</button>
-			<button class="Espaciado11">Registrar</button>
-		</li>
+				<h:outputLabel for="nombreMarca" value="Nombres "
+					styleClass="control-label" />
+				<p:inputText autocomplete="off" id="nombreMarca"
+					styleClass="form-control"
+					value="#{marcaController.marca.nombreMarca}" maxlength="30"
+					required="true" requiredMessage="Nombre vacío*"></p:inputText>
+				<p:message for="nombreMarca" style="color:red" />
+
+				<h:outputLabel for="descripcionMarca" value="Id "
+					styleClass="control-label" />
+				<p:inputText autocomplete="off" id="descripcion"
+					styleClass="form-control"
+					value="#{marcaController.marca.descripcion}" required="true" />
+
+				<p:commandButton value="Grabar"
+					actionListener="#{marcaController.insertar()}"
+					styleClass="btn btn-primary " update="@form"
+					action="marca?faces-redirect=true" />				
+			</div>
+		</h:form>
+
 
 
 	</ui:define>

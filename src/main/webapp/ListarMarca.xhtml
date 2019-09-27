@@ -2,20 +2,79 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
 
 <ui:composition template="master.xhtml">
 	<ui:define name="title">
 	.:Listar Marcas:.
 	</ui:define>
+	<ui:define name="titleCont">
+		<span>MARCA </span>
+	</ui:define>
+
+
 	<ui:define name="content">
 
-		<label class="labelMarca">Lista de Marcas</label>
-		<li>aca va la lista de marcas</li>
-		<li><a href="RegistrarMarca.xhtml">
-				<button>Añadir</button>
-		</a></li>
 
+		<h:form>
+			
+				
+
+
+			<div class="row  form-group box-main-btn"
+				style="padding: 30px; height: 15vh; margin: 0;">
+				<div class="col-lg-6 col-md-6">
+					<h3>MARCA</h3>
+				</div>
+
+
+			</div>
+			<div class="row" style="margin-left: 0px; margin-right: 0px;">
+				<div class="col-sm-12" style="margin: 0; padding: 0 15%">
+					<div class="form-group "
+						style="padding: 0; background-color: white;">
+
+
+						<p:dataTable id="listamarca" var="mar"
+							value="#{marcaController.listamarca}" paginator="true"
+							paginatorPosition="bottom" rowsPerPageTemplate="5,10,15,20,25,30"
+							rows="5" styleClass="table table-responsive box-table-class"
+							emptyMessage="No existen registros" rowIndexVar="item"
+							style="margin:0; box-shadow: #16161648 0px 5px 10px;">
+
+							<p:column headerText="Id" sortBy="#{mar.idMarca}">
+								<h:outputText value="#{mar.idMarca}" />
+							</p:column>
+
+							<p:column headerText="Nombre" sortBy="#{mar.nombreMarca}">
+								<h:outputText value="#{mar.nombreMarca}" />
+							</p:column>
+							<p:column headerText="Descripcion" sortBy="#{mar.descripcion}">
+								<h:outputText value="#{mar.descripcion}" />
+							</p:column>
+
+							<p:column headerText="Operacion" exportable="false">
+								<h:commandLink action="listamarca" value="Eliminar"
+									actionListener="#{marcaController.Eliminar(mar)}" />
+							</p:column>
+
+						</p:dataTable>
+						<h:commandLink>
+							<p:outputLabel value="ExportarExcel"></p:outputLabel>
+							<p:dataExporter type="xls" target="listamarca"
+								fileName="ExcelWeb" pageOnly="false" />
+						</h:commandLink>
+						<h:commandLink>
+							<p:outputLabel value="ExportarPdf"></p:outputLabel>
+							<p:dataExporter type="pdf" target="listamarca" fileName="PdfWeb" />
+						</h:commandLink>
+					</div>
+				</div>
+			</div>
+
+		</h:form>
 
 	</ui:define>
 </ui:composition>

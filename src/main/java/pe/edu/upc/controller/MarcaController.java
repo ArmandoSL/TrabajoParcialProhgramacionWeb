@@ -37,15 +37,16 @@ public class MarcaController implements Serializable {
 
 	public String newMarca() {
 		this.setMarca(new Marca());
-		return ".xhtml";
+		return "RegistrarMarca.xhtml";
 	}
 
 	public void insertar() {
 		try {
 			mService.insertar(marca);
-			// cleanespecialidad();
+			
 			mensaje = "Se registro correctamente";
-			// this.lista();
+			CleanMarca();
+			this.lista();
 		} catch (Exception e) {
 			e.getMessage();
 		}
@@ -66,10 +67,12 @@ public class MarcaController implements Serializable {
 	public void Eliminar(Marca marca) {
 		try {
 			mService.eliminar(marca.getIdMarca());
+			lista();
 		} catch (Exception e) {
 			e.getMessage();
 			mensaje = "No se puede eliminar";
 		}
+		this.CleanMarca();
 	}
 
 //////////////////////////////////////////7
