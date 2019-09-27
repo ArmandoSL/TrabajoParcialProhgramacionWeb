@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: sotor
 Build-Jdk: 1.8.0_221
+=======
+Built-By: cristhiansipioncisneros
+Build-Jdk: 12.0.1
+>>>>>>> 63132d552d4a9241b3f40c509002162f2e8d30d0
 Created-By: Maven Integration for Eclipse
 
