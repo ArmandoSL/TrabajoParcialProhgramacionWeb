@@ -1,48 +1,198 @@
 @charset "ISO-8859-1";
-*,
-body {
-    padding: 0px;
-    margin: 0px;
-    overflow: hidden;
-    font-weight: 'Roboto';
-    font-weight: 100;
-}
-
-#sidebar {
-    display: block;
-    list-style: none;
-}
-
-.paneladmi {
-    color: whitesmoke;
-    list-style: none;
-    font-size: 35px;
-    padding-left: 35px;
-}
-
-.paneli a {
-    color: white;
-    list-style: none;
-    font-size: 25px;
-    padding-left: 40px;
-    text-decoration: none;
-}
-
-.paneli2 a {
-    padding-left: 70px;
-    color: white;
-    list-style: none;
-    font-size: 25px;
-    text-decoration: none;
-}
-
-.paneli {
-    height: 40px;
-    width: 100%;
-    margin-top: 20px
-}
-
-.paneli2 {
-    height: 30px;
-    width: 100%;
-}
+                                *,
+                                
+                                .title1{
+                                  
+                                }
+                                body {
+                                    padding: 0px;
+                                    margin: 0px;
+                                    overflow: hidden;
+                                    font-weight: 'Roboto';
+                                    font-weight: 100;
+                                    List-style: none;
+                                }
+                                
+                                #sidebar {
+                                    display: block;
+                                    list-style: none;
+                                }
+                                
+                                .paneladmi {
+                                    color: whitesmoke;
+                                    list-style: none;
+                                    font-size: 35px;
+                                    padding-left: 35px;
+                                }
+                                
+                                .paneli a {
+                                    color: white;
+                                    list-style: none;
+                                    font-size: 25px;
+                                    padding-left: 40px;
+                                    text-decoration: none;
+                                    font-weight: bold;
+                                }
+                                
+                                .paneli2 a {
+                                    padding-left: 70px;
+                                    color: white;
+                                    list-style: none;
+                                    font-size: 25px;
+                                    text-decoration: none;
+                                }
+                                
+                                .paneli {
+                                    height: 40px;
+                                    width: 100%;
+                                    margin-top: 20px
+                                }
+                                
+                                .paneli2 {
+                                    height: 30px;
+                                    width: 100%;
+                                }
+                                /*  Registrar Abogado */
+                                
+                                .registabogado {
+                                    padding-top: 50px;
+                                    padding-left: 25%;
+                                    font-size: 50px;
+                                }
+                                
+                                .labelAbogado {
+                                    margin-top: 40px;
+                                    margin-left: 40px;
+                                    font-size: 25px;
+                                }
+                                
+                                input {
+                                    margin-left: 3%;
+                                }
+                                
+                                button {
+                                    width: 13%;
+                                    height: 10%;
+                                    margin-top: 5%;
+                                }
+                                /*  Registrar Categoria  */
+                                
+                                .registCategoria {
+                                    padding-top: 50px;
+                                    padding-left: 25%;
+                                    font-size: 50px;
+                                }
+                                
+                                .labelCategoria {
+                                    margin-top: 40px;
+                                    margin-left: 40px;
+                                    font-size: 25px;
+                                }
+                                
+                                textarea {
+                                    margin-left: 20%;
+                                }
+                                
+                                .buttonCategoria {
+                                    margin-left: 30%;
+                                }
+                                /*  Registrar Marca  */
+                                
+                                .registMarca {
+                                    padding-top: 50px;
+                                    padding-left: 25%;
+                                    font-size: 50px;
+                                }
+                                
+                                .labelMarca {
+                                    margin-top: 40px;
+                                    margin-left: 40px;
+                                    font-size: 25px;
+                                    List-style: none;
+                                }
+                                
+                                .buttonMarca {
+                                    margin-left: 30%;
+                                }
+                                /*   Registrar Transportista */
+                                
+                                .registTransportista {
+                                    padding-top: 50px;
+                                    padding-left: 25%;
+                                    font-size: 50px;
+                                    font-weight: 'fantasy';
+                                }
+                                
+                                .registTransportista a {
+                                    font-weight: 'fantasy';
+                                }
+                                
+                                .labelTransportista a {
+                                    font-weight: 500;
+                                }
+                                
+                                .labelTransportista {
+                                    margin-top: 40px;
+                                    margin-left: 40px;
+                                    font-size: 25px;
+                                    font-weight: 500;
+                                }
+                                
+                                .buttonTransportista {
+                                    margin-left: 30%;
+                                }
+                                
+                                .Espaciado1 {
+                                    /*Abogado espaciado textbox*/
+                                    margin-left: 10%;
+                                }
+                                
+                                .Espaciado2 {
+                                    /*Abogado espaciado textbox*/
+                                    margin-left: 5.75%;
+                                }
+                                
+                                .Espaciado3 {
+                                    /*Abogado espaciado textbox*/
+                                    margin-left: 12.25%
+                                }
+                                
+                                .Espaciado4 {
+                                    /*Abogado espaciado textbox*/
+                                    margin-left: 2.7%;
+                                }
+                                
+                                .Espaciado5 {
+                                    /*Abogado espaciado boton*/
+                                    margin-left: 15%;
+                                    margin-top: 15%;
+                                    width: 15%;
+                                }
+                                
+                                .Espaciado6 {
+                                    /*Abogado espaciado boton*/
+                                    margin-left: 35%;
+                                }
+                                
+                                .Espaciado7 {
+                                    margin-left: 10%;
+                                }
+                                
+                                .Espaciado8 {
+                                    margin-top: 20%;
+                                }
+                                
+                                .Espaciado9 {
+                                    margin-top: 3%;
+                                    margin-left: 37%;
+                                }
+                                
+                                .Espaciado10 {
+                                    margin-top: 15%;
+                                    width: 15%;
+                                }
+                                
+                                .Espaciado11 {
+                                    margin-left: 22%;
+                                    margin-top: 15%;
+                                }

@@ -29,35 +29,43 @@
 
 	<div class="row" style="height: 100vh">
 		<div class="col-lg-3 col-md-3" style="background-color: black;">
-			<h1
-				style="color: white; font-size: 30px; text-align: center; padding: 20px 0px; height: 10vh; border-bottom: white 1px solid;">DIVEMOTOR</h1>
+			<h1 style="color:white;  font-size: 30px; text-align: center; padding:  20px 0px; height: 10vh; border-bottom: rgb(0, 0, 0) 1px solid;"></h1>
 
 			<ul class="nav nav-stacked panel" id="sidebar">
 
 				<img src="resources/img/qwe.png" style="align-items: center"
 					id="imgadmi" height="100px" />
 				<li class="paneladmi"><a> Administrador</a></li>
-
-				<li class="paneli"><a href="listMotor.xhtml"> Importacion</a></li>
-				<li class="paneli2"><a href="listPart.xhtml ">Gestión de
+				<div
+				style="background-color: #142332; display: flex; width: 100%; height: 6vh;">
+				<h3 style="color: white; margin: auto; font-weight: 100;">Menú</h3>
+			</div>
+				<li class="paneli"><a href=""> Importacion</a></li>
+				<li class="paneli2"><a href="GestionProductos.xhtml ">Gestión de
 						productos</a></li>
-				<li class="paneli2 "><a href="listMotor.xhtml"> Elección de
+				<li class="paneli2 "><a href="EleccionFlete.xhtml"> Elección de
 						flete</a></li>
-				<li class="paneli2"><a href="listPart.xhtml ">Declaración
+				<li class="paneli2"><a href="DeclaracionAduana.xhtml ">Declaración
 						aduana</a></li>
-				<li class="paneli2"><a href="listMotor.xhtml"> Selección de
+				<li class="paneli2"><a href="SeleccionAbogado.xhtml"> Selección de
 						abogados</a></li>
 
 				<li class="paneli"><a href="ListarAbogado.xhtml"> Abogados</a></li>
 				<li class="paneli"><a href="ListarCategoria.xhtml">
 						Categoria</a></li>
 				<li class="paneli"><a href="ListarMarca.xhtml"> Marca</a></li>
-				<li class="paneli"><a href="ListTransportista.xhtml">
+				<li class="paneli"><a href="ListarTransportista.xhtml">
 						Transportista</a></li>
 
 			</ul>
 		</div>
 		<div class="col-lg-9 col-md-9" style="padding: 0;">
+
+			<div
+				style="background-color: black; box-shadow: #0000004f 0px 4px 10px; display: flex; width: 100%; height: 13vh; margin: 0px;">
+				<h2
+					style="color: white; margin: auto; font-size: 50px; font-family: 'Roboto';">DIVEMOTOR</h2>
+			</div>
 			<ui:insert name="content">
 			</ui:insert>
 		</div>
