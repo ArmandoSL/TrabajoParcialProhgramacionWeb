@@ -6,9 +6,8 @@
 	<persistence-unit name="TParcial"
 		transaction-type="JTA">
 
-		<jta-data-source>java:/MySqlDS2</jta-data-source>
+		<jta-data-source>java:/webDS</jta-data-source>
 		<class>pe.edu.upc.entity.Abogado</class>		
-
 		<class>pe.edu.upc.entity.Categoria</class>
 		<class>pe.edu.upc.entity.Informe_importacion</class>
 		<class>pe.edu.upc.entity.DetalleProducto</class>
