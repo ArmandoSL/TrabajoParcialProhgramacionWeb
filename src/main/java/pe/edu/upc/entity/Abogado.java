@@ -22,6 +22,7 @@ public class Abogado implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idAbogado;
+	
 	@ManyToOne
 	@JoinColumn(name = "idEspecialidad",nullable = false)
 	private Especialidad especialidad;

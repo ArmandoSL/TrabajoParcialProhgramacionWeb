@@ -10,7 +10,7 @@ import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import pe.edu.upc.dao.IDeclaracionAduaneraDao;
-import pe.edu.upc.entity.Declaracion_aduanera;
+import pe.edu.upc.entity.Informe_importacion;
 
 public class DeclaracionAduaneraDaoImpl implements Serializable, IDeclaracionAduaneraDao {
 
@@ -24,7 +24,7 @@ public class DeclaracionAduaneraDaoImpl implements Serializable, IDeclaracionAdu
 
 	@Transactional
 	@Override
-	public void insertar(Declaracion_aduanera Declaracion_aduanera) {
+	public void insertar(Informe_importacion Declaracion_aduanera) {
 		try {
 			em.persist(Declaracion_aduanera);
 		} catch (Exception e) {
@@ -36,12 +36,12 @@ public class DeclaracionAduaneraDaoImpl implements Serializable, IDeclaracionAdu
 	@Transactional
 	@Override
 	public void eliminar(int idDeclaracion_aduanera) {
-		Declaracion_aduanera declara = new Declaracion_aduanera();
+		Informe_importacion declara = new Informe_importacion();
 
 		em.remove(declara);
 
 		try {
-			declara = em.getReference(Declaracion_aduanera.class, idDeclaracion_aduanera);
+			declara = em.getReference(Informe_importacion.class, idDeclaracion_aduanera);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -50,7 +50,7 @@ public class DeclaracionAduaneraDaoImpl implements Serializable, IDeclaracionAdu
 
 	@Transactional
 	@Override
-	public void modificar(Declaracion_aduanera declaracion_aduanera) {
+	public void modificar(Informe_importacion declaracion_aduanera) {
 		try {
 			em.merge(declaracion_aduanera);
 		} catch (Exception e) {
@@ -62,11 +62,11 @@ public class DeclaracionAduaneraDaoImpl implements Serializable, IDeclaracionAdu
 	@SuppressWarnings("unchecked")
 	@Transactional
 	@Override
-	public List<Declaracion_aduanera> listar() {
-		List<Declaracion_aduanera> lista = new ArrayList<>();
+	public List<Informe_importacion> listar() {
+		List<Informe_importacion> lista = new ArrayList<>();
 		try {
 			Query q = em.createQuery("select a from DeclaracionAduanera a");
-			lista = (List<Declaracion_aduanera>) q.getResultList();
+			lista = (List<Informe_importacion>) q.getResultList();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

@@ -22,7 +22,8 @@ public class Marca implements Serializable {
 	private int idMarca;
 	@Column(name = "NombreMarca", nullable = false, length = 20)
 	private String NombreMarca;
-	
+	@Column(name = "Descripcion", nullable = false, length = 20)
+	private String Descripcion;
 	
 	//////////////////////////7
 	public int getIdMarca() {
@@ -37,10 +38,19 @@ public class Marca implements Serializable {
 	public void setNombreMarca(String nombreMarca) {
 		NombreMarca = nombreMarca;
 	}
-	public Marca(int idMarca, String nombreMarca) {
+	
+	public String getDescripcion() {
+		return Descripcion;
+	}
+	public void setDescripcion(String descripcion) {
+		Descripcion = descripcion;
+	}
+	
+	public Marca(int idMarca, String nombreMarca, String descripcion) {
 		super();
 		this.idMarca = idMarca;
 		NombreMarca = nombreMarca;
+		Descripcion = descripcion;
 	}
 	public Marca() {
 		super();

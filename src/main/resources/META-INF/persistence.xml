@@ -9,16 +9,14 @@
 		<class>pe.edu.upc.entity.Abogado</class>
 		<class>pe.edu.upc.entity.Categoria_Producto</class>
 		<class>pe.edu.upc.entity.Categoria</class>
-		<class>pe.edu.upc.entity.Declaracion_aduanera</class>
+		<class>pe.edu.upc.entity.Informe_importacion</class>
 		<class>pe.edu.upc.entity.DetalleProducto</class>
 		<class>pe.edu.upc.entity.Especialidad</class>
 		<class>pe.edu.upc.entity.Flete</class>
 		<class>pe.edu.upc.entity.Marca</class>
-		<class>pe.edu.upc.entity.ProductoImportar</class>
 		<class>pe.edu.upc.entity.Requisito_legal</class>
 		<class>pe.edu.upc.entity.Transportista</class>
-		<class>pe.edu.upc.entity.ProductoEmpresa</class>
-		<class>pe.edu.upc.entity.LineadePedido</class>
+		<class>pe.edu.upc.entity.Producto</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<property

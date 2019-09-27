@@ -1,5 +1,6 @@
 package pe.edu.upc.entity;
 
+import java.io.FileInputStream;
 import java.io.Serializable;
 
 import javax.persistence.Column;
@@ -8,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.sun.mail.handlers.image_gif;
 @Entity
 @Table(name = "Requisitos_legales")
 public class Requisito_legal implements Serializable {
