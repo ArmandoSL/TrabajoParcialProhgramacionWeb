@@ -7,17 +7,17 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import pe.edu.upc.dao.IProductoEmpresaDao;
+import pe.edu.upc.dao.IProductoDao;
 import pe.edu.upc.entity.Producto;
-import pe.edu.upc.service.IProductoEmpresaService;
+import pe.edu.upc.service.IProductoService;
 
 @Named
 @RequestScoped
-public class ProductoEmpresaServiceImpl implements IProductoEmpresaService, Serializable {
+public class ProductoServiceImpl implements IProductoService, Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Inject
-	private IProductoEmpresaDao peD;
+	private IProductoDao peD;
 
 	@Override
 	public void insertar(Producto productoEmp) {

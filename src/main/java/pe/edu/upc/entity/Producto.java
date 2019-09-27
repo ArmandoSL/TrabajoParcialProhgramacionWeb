@@ -40,6 +40,54 @@ public class Producto implements Serializable {
 
 
 
+	public int getIdProducto() {
+		return idProducto;
+	}
+
+	public void setIdProducto(int idProducto) {
+		this.idProducto = idProducto;
+	}
+
+	public Marca getMarca() {
+		return marca;
+	}
+
+	public void setMarca(Marca marca) {
+		this.marca = marca;
+	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
+	public String getNombre() {
+		return Nombre;
+	}
+
+	public void setNombre(String nombre) {
+		Nombre = nombre;
+	}
+
+	public String getDescripcion() {
+		return Descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		Descripcion = descripcion;
+	}
+
+	public double getPreciocompra() {
+		return Preciocompra;
+	}
+
+	public void setPreciocompra(double preciocompra) {
+		Preciocompra = preciocompra;
+	}
+
 	public Producto() {
 		super();
 		// TODO Auto-generated constructor stub

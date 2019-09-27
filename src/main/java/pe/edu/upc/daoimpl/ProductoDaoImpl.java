@@ -9,10 +9,10 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
-import pe.edu.upc.dao.IProductoEmpresaDao;
+import pe.edu.upc.dao.IProductoDao;
 import pe.edu.upc.entity.Producto;
 
-public class ProductoEmpresaDaoImpl implements Serializable, IProductoEmpresaDao {
+public class ProductoDaoImpl implements Serializable, IProductoDao {
 
 	/**
 	 * 

@@ -10,37 +10,37 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import pe.edu.upc.entity.Producto;
-import pe.edu.upc.service.IProductoEmpresaService;
+import pe.edu.upc.service.IProductoService;
 
 @Named
 @RequestScoped
-public class ProductoEmpresaController implements Serializable {
+public class ProductoController implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	@Inject
-	private IProductoEmpresaService pService;
-	private Producto productoempresa;
+	private IProductoService pService;
+	private Producto producto;
 	private String mensaje = "";
 	List<Producto> listaproductoemp;
 
 	@PostConstruct
 	public void init() {
 		this.listaproductoemp = new ArrayList<Producto>();
-		this.productoempresa = new Producto();
+		this.producto = new Producto();
 		this.lista();
 	}
 
 	public String newProductoEmpresa() {
-		this.setProductoempresa(new Producto());
+		this.setProducto(new Producto());
 		return ".xhtml";
 	}
 
 	public void insertar() {
 		try {
-			pService.insertar(productoempresa);
+			pService.insertar(producto);
 			// cleanespecialidad();
 			mensaje = "Se registro correctamente";
 			// this.lista();
@@ -63,27 +63,19 @@ public class ProductoEmpresaController implements Serializable {
 
 	public void Eliminar(Producto produc) {
 		try {
-			pService.eliminar(produc.getIdProductoEmpresa());
+			pService.eliminar(produc.getIdProducto());
 		} catch (Exception e) {
 			e.getMessage();
 			mensaje = "No se puede eliminar";
 		}
 	}
 
-	public IProductoEmpresaService getpService() {
+	public IProductoService getpService() {
 		return pService;
 	}
 
-	public void setpService(IProductoEmpresaService pService) {
+	public void setpService(IProductoService pService) {
 		this.pService = pService;
-	}
-
-	public Producto getProductoempresa() {
-		return productoempresa;
-	}
-
-	public void setProductoempresa(Producto productoempresa) {
-		this.productoempresa = productoempresa;
 	}
 
 	public String getMensaje() {
@@ -102,16 +94,26 @@ public class ProductoEmpresaController implements Serializable {
 		this.listaproductoemp = listaproductoemp;
 	}
 
-	public ProductoEmpresaController(IProductoEmpresaService pService, Producto productoempresa, String mensaje,
+	
+
+	public ProductoController(IProductoService pService, Producto producto, String mensaje,
 			List<Producto> listaproductoemp) {
 		super();
 		this.pService = pService;
-		this.productoempresa = productoempresa;
+		this.producto = producto;
 		this.mensaje = mensaje;
 		this.listaproductoemp = listaproductoemp;
 	}
 
-	public ProductoEmpresaController() {
+	public Producto getProducto() {
+		return producto;
+	}
+
+	public void setProducto(Producto producto) {
+		this.producto = producto;
+	}
+
+	public ProductoController() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

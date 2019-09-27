@@ -4,7 +4,7 @@ import java.util.List;
 
 import pe.edu.upc.entity.Producto;
 
-public interface IProductoEmpresaService {
+public interface IProductoService {
 	public void insertar(Producto productoEmp);
 
 	public void eliminar(int idproductoEmp);
