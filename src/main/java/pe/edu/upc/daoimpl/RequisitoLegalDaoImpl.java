@@ -34,7 +34,10 @@ public class RequisitoLegalDaoImpl implements Serializable,IRequisitoLegalDao {
 	@Override
 	public void eliminar(int idRequisito_legal) {
 		Requisito_legal abog = new Requisito_legal();
+<<<<<<< HEAD
 		em.remove(abog);
+=======
+>>>>>>> branch 'master' of https://github.com/ArmandoSL/TrabajoParcialProhgramacionWeb.git
 		try {
 			abog = em.getReference(Requisito_legal.class, idRequisito_legal);
 		} catch (Exception e) {

@@ -33,7 +33,10 @@ public class CategoriaDaoImpl implements ICategoriaDao,Serializable{
 	@Override
 	public void eliminar(int idCategoria) {
 		Categoria categor = new Categoria();
+<<<<<<< HEAD
 		em.remove(categor);
+=======
+>>>>>>> branch 'master' of https://github.com/ArmandoSL/TrabajoParcialProhgramacionWeb.git
 		try {
 			categor = em.getReference(Categoria.class, idCategoria);
 		} catch (Exception e) {

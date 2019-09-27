@@ -35,7 +35,10 @@ public class MarcaDaoImpl implements IMarcaDao,Serializable{
 	@Override
 	public void eliminar(int idMarca) {
 		Marca marca = new Marca();
+<<<<<<< HEAD
 		em.remove(marca);
+=======
+>>>>>>> branch 'master' of https://github.com/ArmandoSL/TrabajoParcialProhgramacionWeb.git
 		try {
 			marca = em.getReference(Marca.class, idMarca);
 		} catch (Exception e) {

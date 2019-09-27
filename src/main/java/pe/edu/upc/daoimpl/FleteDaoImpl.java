@@ -35,7 +35,10 @@ public class FleteDaoImpl implements Serializable, IFleteDao {
 	@Override
 	public void eliminar(int idFlete) {
 		Flete flete = new Flete();
+<<<<<<< HEAD
 		em.remove(flete);
+=======
+>>>>>>> branch 'master' of https://github.com/ArmandoSL/TrabajoParcialProhgramacionWeb.git
 		try {
 			flete = em.getReference(Flete.class, idFlete);
 		} catch (Exception e) {

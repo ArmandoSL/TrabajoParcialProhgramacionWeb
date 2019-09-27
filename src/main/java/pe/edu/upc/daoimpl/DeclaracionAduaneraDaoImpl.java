@@ -37,7 +37,10 @@ public class DeclaracionAduaneraDaoImpl implements Serializable, IDeclaracionAdu
 	@Override
 	public void eliminar(int idDeclaracion_aduanera) {
 		Declaracion_aduanera declara = new Declaracion_aduanera();
+<<<<<<< HEAD
 		em.remove(declara);
+=======
+>>>>>>> branch 'master' of https://github.com/ArmandoSL/TrabajoParcialProhgramacionWeb.git
 		try {
 			declara = em.getReference(Declaracion_aduanera.class, idDeclaracion_aduanera);
 		} catch (Exception e) {

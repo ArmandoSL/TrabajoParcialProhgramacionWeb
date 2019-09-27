@@ -35,7 +35,10 @@ public class AbogadoDaoImpl implements IAbogadoDao, Serializable {
 	@Override
 	public void eliminar(int idAbogado) {
 		Abogado abog = new Abogado();
+<<<<<<< HEAD
 		em.remove(abog);
+=======
+>>>>>>> branch 'master' of https://github.com/ArmandoSL/TrabajoParcialProhgramacionWeb.git
 		try {
 			abog = em.getReference(Abogado.class, idAbogado);
 		} catch (Exception e) {

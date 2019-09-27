@@ -36,7 +36,10 @@ public class TransportistaDaoImpl implements Serializable, ITransportistaDao {
 	@Override
 	public void eliminar(int idTransportista) {
 		Transportista abog = new Transportista();
+<<<<<<< HEAD
 		em.remove(abog);
+=======
+>>>>>>> branch 'master' of https://github.com/ArmandoSL/TrabajoParcialProhgramacionWeb.git
 		try {
 			abog = em.getReference(Transportista.class, idTransportista);
 		} catch (Exception e) {

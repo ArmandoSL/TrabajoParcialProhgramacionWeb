@@ -36,7 +36,10 @@ public class DetalleProductoDaoImpl implements Serializable,IDetalleProductoDao 
 	@Override
 	public void eliminar(int idDetalleProducto) {
 		DetalleProducto detallepro = new DetalleProducto();
+<<<<<<< HEAD
 		em.remove(detallepro);
+=======
+>>>>>>> branch 'master' of https://github.com/ArmandoSL/TrabajoParcialProhgramacionWeb.git
 		try {
 			detallepro = em.getReference(DetalleProducto.class, idDetalleProducto);
 		} catch (Exception e) {

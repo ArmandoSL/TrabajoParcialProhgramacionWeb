@@ -36,7 +36,10 @@ public class Categoria_ProductoDaoImpl implements ICategoria_ProductoDao, Serial
 	@Override
 	public void eliminar(int idCategoria_Producto) {
 		Categoria_Producto cat_pro = new Categoria_Producto();
+<<<<<<< HEAD
 		em.remove(cat_pro);
+=======
+>>>>>>> branch 'master' of https://github.com/ArmandoSL/TrabajoParcialProhgramacionWeb.git
 		try {
 			cat_pro = em.getReference(Categoria_Producto.class, idCategoria_Producto);
 		} catch (Exception e) {

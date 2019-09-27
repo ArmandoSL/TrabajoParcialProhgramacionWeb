@@ -36,7 +36,10 @@ public class LineaPedidosDaoImpl implements ILineaPedidoDao, Serializable {
 	public void eliminar(int lineadePedido) {
 
 		LineadePedido lineapedi = new LineadePedido();
+<<<<<<< HEAD
 		em.remove(lineapedi);
+=======
+>>>>>>> branch 'master' of https://github.com/ArmandoSL/TrabajoParcialProhgramacionWeb.git
 		try {
 			lineapedi = em.getReference(LineadePedido.class, lineadePedido);
 		} catch (Exception e) {

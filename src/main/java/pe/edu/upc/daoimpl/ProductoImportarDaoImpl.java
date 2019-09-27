@@ -35,7 +35,10 @@ public class ProductoImportarDaoImpl implements Serializable,IProductoImportarDa
 	@Override
 	public void eliminar(int idProductoImportar) {
 		ProductoImportar productoImportar = new ProductoImportar();
+<<<<<<< HEAD
 		em.remove(productoImportar);
+=======
+>>>>>>> branch 'master' of https://github.com/ArmandoSL/TrabajoParcialProhgramacionWeb.git
 		try {
 			productoImportar = em.getReference(ProductoImportar.class, idProductoImportar);
 		} catch (Exception e) {
