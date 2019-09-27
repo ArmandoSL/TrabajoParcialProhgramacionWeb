@@ -5,7 +5,7 @@
 	version="2.5">
 	<display-name>semana4</display-name>
 	<welcome-file-list>
-		<welcome-file>productos.xhtml</welcome-file>
+		<welcome-file>panel.xhtml</welcome-file>
 
 	</welcome-file-list>
 	<servlet>

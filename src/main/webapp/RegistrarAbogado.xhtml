@@ -1,11 +1,41 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
 
-<h:head></h:head> 
-<body> 
+<ui:composition template="master.xhtml">
+	<ui:define name="title">
+	</ui:define>
+	
+	<ui:define name="content">
+	<label class="registabogado">Registrar Abogados</label>
+            <hr style="color: green" />
 
-</body> 
+            <li class=" labelAbogado ">
+                <a>Nombre</a>
+                <input type="text " class="Espaciado1 "/>
+
+            </li>
+
+            <li class="labelAbogado ">
+                <a>Especialidad</a>
+                <input type="text " class="Espaciado2 "/>
+            </li>
+
+            <li class="labelAbogado ">
+                <a>Precio</a>
+                <input type="text " class="Espaciado3 "/>
+            </li>
+            <li class="labelAbogado ">
+                <a>Fecha Estimada  </a>
+                <input type="text " class="Espaciado4 "/>
+            </li>
+            <li>
+                <button class="Espaciado5 ">Cancelar</button>
+                <button class="Espaciado6 ">Registrar</button>
+            </li>	
+	</ui:define>
+</ui:composition>
+
 </html>
