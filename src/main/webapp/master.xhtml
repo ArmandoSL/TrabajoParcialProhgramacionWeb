@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta charset="utf-8" />
+	<title><ui:insert name="title"></ui:insert></title>
+	<meta name="generator" content="Bootply" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<link
+		href='https://fonts.googleapis.com/css?family=Roboto:400,300,500|Ubuntu+Condensed'
+		rel='stylesheet' type='text/css' />
+	<link rel="shortcut icon" type="image/x-icon"
+		href="resources/img/favicon.ico" />
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="resources/css/estilo.css" />
+
+	<h:outputStylesheet name="css/bootstrap.min.css" />
+	<h:outputStylesheet name="css/main_base.css" />
+	<h:outputStylesheet name="css/font_ico.css" />
+	<ui:insert name="headCont"></ui:insert>
+</h:head>
+<h:body>
+
+	<div class="row" style="height: 100vh">
+		<div class="col-lg-3 col-md-3" style="background-color: black;">
+			<h1
+				style="color: white; font-size: 30px; text-align: center; padding: 20px 0px; height: 10vh; border-bottom: white 1px solid;">DIVEMOTOR</h1>
+
+			<ul class="nav nav-stacked panel" id="sidebar">
+
+				<img src="resources/img/qwe.png" style="align-items: center"
+					id="imgadmi" height="100px" />
+				<li class="paneladmi"><a> Administrador</a></li>
+
+				<li class="paneli"><a href="listMotor.xhtml"> Importacion</a></li>
+				<li class="paneli2"><a href="listPart.xhtml ">Gestión de
+						productos</a></li>
+				<li class="paneli2 "><a href="listMotor.xhtml"> Elección de
+						flete</a></li>
+				<li class="paneli2"><a href="listPart.xhtml ">Declaración
+						aduana</a></li>
+				<li class="paneli2"><a href="listMotor.xhtml"> Selección de
+						abogados</a></li>
+
+				<li class="paneli"><a href="ListarAbogado.xhtml"> Abogados</a></li>
+				<li class="paneli"><a href="ListarCategoria.xhtml">
+						Categoria</a></li>
+				<li class="paneli"><a href="ListarMarca.xhtml"> Marca</a></li>
+				<li class="paneli"><a href="ListTransportista.xhtml">
+						Transportista</a></li>
+
+			</ul>
+		</div>
+		<div class="col-lg-9 col-md-9" style="padding: 0;">
+			<ui:insert name="content">
+			</ui:insert>
+		</div>
+	</div>
+
+	<!--/container-->
+	<ui:insert name="footerCont"></ui:insert>
+
+
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+</h:body>
+</html>
