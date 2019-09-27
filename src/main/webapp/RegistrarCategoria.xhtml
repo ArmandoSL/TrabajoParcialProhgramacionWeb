@@ -2,23 +2,65 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
-
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 <ui:composition template="master.xhtml">
 	<ui:define name="title">
-	</ui:define>
-	<ui:define name="content">
-		<label for="title" class="registCategoria">Registrar Categoria</label>
-		<li class="labelCategoria"><a>Nombre de Categoria</a> <input
-			type="text" placeholder="Accesorios de Vehiculo" /></li>
+        .:Registro de Categoria:.
+    </ui:define>
 
-		<li><a style="align-self: initial">Descripcion</a></li>
-		<textarea name="descripcion" id="descripcion" cols="50" rows="3"
-			placeholder="Descripcion de la categoria"></textarea>
-		<li>
-			<button>Cancelar</button>
-			<button>Registrar</button>
-		</li>
+	<ui:define name="titleCont">
+		<span>Categoria</span>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+			<div class="row" style="padding: 0; height: 90vh;">
+				<div class="col-lg-6 col-md-6">
+					<img src="resources/img/logo.png" />
+				</div>
+				<div class="col-lg-6 col-md-6" style="padding: 20vh 20% 0 0;">
+					<h:outputLabel for="idCategoria" value="Id "
+						styleClass="control-label" />
+					<p:inputText autocomplete="off" id="idCategoria"
+						styleClass="form-control" style="margin-bottom:20px;"
+						value="#{categoriaController.categoria.idCategoria}"
+						required="true" />
+
+					<h:outputLabel for="nombreCategoria" value="Nombres "
+						styleClass="control-label" />
+					<p:inputText autocomplete="off" id="nombreCategoria"
+						styleClass="form-control" style="margin-bottom:20px;"
+						value="#{categoriaController.categoria.nombre}"
+						required="true"
+						requiredMessage="Por favor, complete el campo vacio"></p:inputText>
+					<p:message for="nombreCategoria" style="color:red" />
+
+					<h:outputLabel for="nombreCategoria" value="Descripcion "
+						styleClass="control-label" />
+					<p:inputText autocomplete="off" id="Descripcion"
+						styleClass="form-control" style="margin-bottom:20px;"
+						value="#{categoriaController.categoria.descripcion}"
+						required="true"
+						requiredMessage="Por favor, complete el campo vacio"></p:inputText>
+					<p:message for="nombreCategoria" style="color:red" />
+
+					<h:commandButton value="Grabar" style=" width:30%; margin:0 10%;"
+						actionListener="#{categoriaController.insertar()}"
+						styleClass="btn btn-primary " update="@form"
+						action="categoria?faces-redirect=true" />
+
+					<h:commandButton value="Cancelar" style=" width:30%; margin:0 10%;"
+						action="categoria?faces-redirect=true" immediate="true"
+						styleClass="btn btn-light" ajax="false" />
+				</div>
+			</div>
+		</h:form>
+
+	</ui:define>
+
+	<ui:define name="footerCont">
+
 	</ui:define>
 </ui:composition>
 
