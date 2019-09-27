@@ -7,7 +7,6 @@
 		transaction-type="JTA">
 		<jta-data-source>java:/webDS</jta-data-source>
 		<class>pe.edu.upc.entity.Abogado</class>
-		<class>pe.edu.upc.entity.Categoria_Producto</class>
 		<class>pe.edu.upc.entity.Categoria</class>
 		<class>pe.edu.upc.entity.Informe_importacion</class>
 		<class>pe.edu.upc.entity.DetalleProducto</class>
